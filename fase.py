@@ -51,7 +51,9 @@ class Fase():
 
         :param porcos:
         """
-        pass
+        # pass (obs: essa era a intrução original no código obtido no GitHub)
+
+        self._adicionar_ator(self._porcos, *porcos) # instrução adicionada conforme orientação do Renzo em 13/01/202
 
     def adicionar_passaro(self, *passaros):
         """
@@ -59,7 +61,11 @@ class Fase():
 
         :param passaros:
         """
-        pass
+        # pass (obs: essa era a intrução original no código obtido no GitHub)
+
+        self._adicionar_ator(self._passaros, *passaros) # instrução adicionada conforme orientação do Renzo em 13/01/202
+
+    # def acabou(self):
 
     def status(self):
         """

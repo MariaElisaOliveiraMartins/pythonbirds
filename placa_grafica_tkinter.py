@@ -7,7 +7,9 @@ from os import path
 import atores
 
 from fase import Fase, EM_ANDAMENTO, VITORIA
-from atores import PassaroVermelho, PassaroAmarelo, Porco, Obstaculo
+from atores import PassaroVermelho, PassaroAmarelo, Porco, Obstaculo, Passaro #Classe Passaro incluida para efeito de teste
+#from atores import PassaroVermelho, PassaroAmarelo, Porco, Obstaculo -> linha do código original
+
 
 ALTURA_DA_TELA = 600  # px
 
@@ -139,6 +141,7 @@ def rodar_fase(fase):
     PassaroVermelho.velocidade_escalar *= multiplicador
     atores.GRAVIDADE = 100
     animar(root, stage, fase)
+
 
 
 if __name__ == '__main__':

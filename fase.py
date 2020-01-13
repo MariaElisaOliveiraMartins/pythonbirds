@@ -35,6 +35,7 @@ class Fase():
         self._passaros = []
         self._porcos = []
         self._obstaculos = []
+        # self._adicionar_ator = [] # instrução incluida para tentar resolver o problema (chute)
 
 
     def adicionar_obstaculo(self, *obstaculos):
@@ -51,9 +52,9 @@ class Fase():
 
         :param porcos:
         """
-        # pass (obs: essa era a intrução original no código obtido no GitHub)
+        pass # (obs: essa era a intrução original no código obtido no GitHub)
 
-        self._adicionar_ator(self._porcos, *porcos) # instrução adicionada conforme orientação do Renzo em 13/01/202
+        # self._adicionar_ator(self._porcos, *porcos) # instrução adicionada conforme orientação do Renzo em 13/01/202
 
     def adicionar_passaro(self, *passaros):
         """
@@ -61,9 +62,9 @@ class Fase():
 
         :param passaros:
         """
-        # pass (obs: essa era a intrução original no código obtido no GitHub)
+        pass #(obs: essa era a intrução original no código obtido no GitHub)
 
-        self._adicionar_ator(self._passaros, *passaros) # instrução adicionada conforme orientação do Renzo em 13/01/202
+        # self._adicionar_ator(self._passaros, *passaros) # instrução adicionada conforme orientação do Renzo em 13/01/202
 
     # def acabou(self):
 

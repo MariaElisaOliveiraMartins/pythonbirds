@@ -6,7 +6,8 @@ project_dir = path.dirname(__file__)
 project_dir = path.join('..')
 sys.path.append(project_dir)
 
-from atores import PassaroAmarelo, PassaroVermelho, Obstaculo, Porco
+#from atores import PassaroAmarelo, PassaroVermelho, Obstaculo, Porco #linha do código original
+from atores import PassaroAmarelo, PassaroVermelho, Obstaculo, Porco, Passaro #linha incluida para efeito de teste
 from fase import Fase
 from placa_grafica_tkinter import rodar_fase
 
@@ -17,10 +18,10 @@ if __name__ == '__main__':
     # Adicionar Pássaros Vermelhos
     for i in range(5):
         fase.adicionar_passaro(PassaroVermelho(30, 30))
+
     # Adicionar Pássaros Amarelos
     for i in range(30):
         fase.adicionar_passaro(PassaroAmarelo(30, 30))
-
 
     # Obstaculos
     for i in range(30, 480, 32):

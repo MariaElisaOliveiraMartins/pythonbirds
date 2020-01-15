@@ -35,7 +35,7 @@ class Fase():
         self._passaros = []
         self._porcos = []
         self._obstaculos = []
-        self._adicionar_ator = [] # instrução incluida para tentar resolver o problema (chute)
+        self._adicionar_ator = [] # correção do problema da falta dos pássaros amarelos no início do jogo
 
 
     def adicionar_obstaculo(self, *obstaculos):
@@ -52,12 +52,10 @@ class Fase():
 
         :param porcos:
         """
-        # self._adicionar_ator(self._porcos, *porcos) # instrução adicionada conforme orientação do Renzo em 13/01/202
 
-        self._porcos.extend(porcos)  # NOVIDADE!
+        self._porcos.extend(porcos)  # Extende para acrescentar o atributo na lista, corrigindo o objeto
 
-        pass # (obs: essa era a intrução original no código obtido no GitHub)
-
+        pass
 
     def adicionar_passaro(self, *passaros):
         """
@@ -65,12 +63,10 @@ class Fase():
 
         :param passaros:
         """
-        # self._adicionar_ator(self._passaros, *passaros) # instrução adicionada conforme orientação do Renzo em 13/01/202
 
-        self._passaros.extend(passaros)  # NOVIDADE!
+        self._passaros.extend(passaros)  # Extende para acrescentar o atributo na lista, corrigindo o objeto
 
-        pass #(obs: essa era a intrução original no código obtido no GitHub)
-
+        pass
 
     # def acabou(self):
 

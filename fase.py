@@ -59,9 +59,6 @@ class Fase():
         pass # (obs: essa era a intrução original no código obtido no GitHub)
 
 
-
-
-
     def adicionar_passaro(self, *passaros):
         """
         Adiciona pássaros em uma fase

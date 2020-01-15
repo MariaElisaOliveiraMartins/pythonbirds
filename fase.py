@@ -52,11 +52,15 @@ class Fase():
 
         :param porcos:
         """
-        # pass # (obs: essa era a intrução original no código obtido no GitHub)
-
-        #self._adicionar_ator(self._porcos, *porcos) # instrução adicionada conforme orientação do Renzo em 13/01/202
+        # self._adicionar_ator(self._porcos, *porcos) # instrução adicionada conforme orientação do Renzo em 13/01/202
 
         self._porcos.extend(porcos)  # NOVIDADE!
+
+        pass # (obs: essa era a intrução original no código obtido no GitHub)
+
+
+
+
 
     def adicionar_passaro(self, *passaros):
         """
@@ -64,13 +68,11 @@ class Fase():
 
         :param passaros:
         """
-        # pass #(obs: essa era a intrução original no código obtido no GitHub)
+        # self._adicionar_ator(self._passaros, *passaros) # instrução adicionada conforme orientação do Renzo em 13/01/202
 
-        #self._adicionar_ator(self._passaros, *passaros) # instrução adicionada conforme orientação do Renzo em 13/01/202
+        self._passaros.extend(passaros)  # NOVIDADE!
 
-        #self._adicionar_ator(self_passaros.extend(passaros), *passaros)
-
-        self._passaros.extend(passaros) #NOVIDADE!
+        pass #(obs: essa era a intrução original no código obtido no GitHub)
 
 
     # def acabou(self):

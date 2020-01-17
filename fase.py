@@ -82,9 +82,9 @@ class Fase():
 
         :return:
         """
-        if not self.tem_porco_ativo() :
+        if not self._tem_porco_ativo() :
             return VITORIA
-        elif self.tem_passaro_ativo():
+        elif self._tem_passaro_ativo():
             return EM_ANDAMENTO
         else: return DERROTA
 
@@ -118,14 +118,14 @@ class Fase():
     def _transformar_em_ponto(self, ator):
         return Ponto(ator.x, ator.y, ator.caracter())
 
-    def tem_porco_ativo(self):
+    def _tem_porco_ativo(self):
         for i in self._porcos:
             if i.status == ATIVO:
                 return True
         return False
 
 
-    def tem_passaro_ativo(self):
+    def _tem_passaro_ativo(self):
         for i in self._passaros:
             if i.status == ATIVO:
                 return True

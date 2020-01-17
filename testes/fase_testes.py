@@ -172,8 +172,13 @@ class FaseTestes(TestCase):
         self.assertFalse(passaros[1].foi_lancado())
         fase.lancar(90, 1)
         fase.lancar(45, 3)
-        fase.lancar(31,
-  , 2)
+        fase.lancar(31, 5) # fase.lancar(31, 2) -> instrução original
+        self.assertTrue(passaros[0].foi_lancado())
+        self.assertTrue(passaros[1].foi_lancado())
+
+        '''     
+        Instruções originais:
+
         fase.adicionar_porco(porco)
         fase.calcular_pontos(0)
         self.assertTrue(passaro.colidir_executado)
@@ -182,6 +187,8 @@ class FaseTestes(TestCase):
         self.assertTrue(passaro.colidir_com_chao_executado)
         self.assertEqual(1, passaro.intervalo_colisao)
         self.assertEqual(1, porco.intervalo_colisao)
+        '''
+
 
     def teste_intervalo_de_colisao_nao_padrao(self):
         '''

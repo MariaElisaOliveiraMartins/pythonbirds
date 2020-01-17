@@ -99,7 +99,10 @@ class Fase():
         :param angulo: ângulo de lançamento
         :param tempo: Tempo de lançamento
         """
-        pass
+        for situacao_do_passaro in self._passaros:
+            if situacao_do_passaro.foi_lancado() == False :
+                situacao_do_passaro.lancar(angulo,tempo)
+                break
 
 
     def calcular_pontos(self, tempo):

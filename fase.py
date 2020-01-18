@@ -44,6 +44,8 @@ class Fase():
 
         :param obstaculos:
         """
+        self._obstaculos.extend(obstaculos)
+
         pass
 
     def adicionar_porco(self, *porcos):
@@ -115,11 +117,11 @@ class Fase():
         :return: objeto do tipo Ponto
         """
         lista_de_bichos = self._passaros + self._porcos
-        for cada_passaro in self.passaros:
+        for cada_passaro in self._passaros:
             cada_passaro.calcular_posicao(tempo)
             for cada_bicho in lista_de_bichos:
                 cada_bicho.colidir(cada_bicho, self.intervalo_de_colisao)
-            cada_passaro.colidir_com_o_chao()
+            cada_passaro.colidir_com_chao()
 
         pontos=[self._transformar_em_ponto(a) for a in self._passaros+self._obstaculos+self._porcos]
 

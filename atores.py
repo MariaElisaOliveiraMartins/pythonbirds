@@ -133,29 +133,31 @@ class Passaro(Ator):
         if self.foi_lancado():
             intervalo_de_tempo = tempo - self._tempo_de_lancamento
             self._calcular_posicao_vertical(intervalo_de_tempo)
+            self._calcular_posicao_horizontal(intervalo_de_tempo)
         return super().calcular_posicao(tempo)
 
 
     def _calcular_posicao_vertical(self, temp):
         """
-            Método que cálcula a posição do passaro de acordo com o tempo.
-
-            Antes do lançamento o pássaro deve retornar o valor de sua posição inicial
-
-            Depois do lançamento o pássaro deve calcular de acordo com sua posição inicial, velocidade escalar,
-            ângulo de lancamento, gravidade (constante GRAVIDADE) e o tempo do jogo.
-
-            Após a colisão, ou seja, ter seus status destruido, o pássaro deve apenas retornar a última posição calculada.
-
-            :param tempo: tempo de jogo a ser calculada a posição
-            :return: posição x, y
+            Método que cálcula e retorna a coordenada vertical do passaro em vôo.
         """
 
         ang_radianos = math.radians(self._angulo_de_lancamento)
-        posic_vert_atual = self._y_inicial
-        posic_vert_atual += self.velocidade_escalar * math.sin(ang_radianos) * temp
-        posic_vert_atual -= (GRAVIDADE * (temp ** 2)) / 2
-        self.y = posic_vert_atual
+        coord_vert = self._y_inicial
+        coord_vert += self.velocidade_escalar * math.sin(ang_radianos) * temp
+        coord_vert -= (GRAVIDADE * (temp ** 2)) / 2
+        self.y = coord_vert
+
+
+    def _calcular_posicao_horizontal(self, temp):
+        """
+            Método que cálcula e retorna a coordenada horizontal do passaro em vôo.
+        """
+
+        ang_radianos = math.radians(self._angulo_de_lancamento)
+        coord_horiz = self._x_inicial
+        coord_horiz += self.velocidade_escalar * math.cos(ang_radianos) * temp
+        self.x = coord_horiz
 
 
     def lancar(self, angulo, tmp_de_lanc):

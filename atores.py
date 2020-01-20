@@ -105,15 +105,13 @@ class Passaro(Ator):
 
         return not self._tempo_de_lancamento is None
 
-
     def colidir_com_chao(self):
         """
         Método que executa lógica de colisão com o chão. Toda vez que y for menor ou igual a 0,
         o status dos Passaro deve ser alterado para destruido, bem como o seu caracter
 
         """
-        pass
-
+        if self.y <= 0: self.status = DESTRUIDO
 
     def calcular_posicao(self, tempo):
         """
@@ -130,7 +128,7 @@ class Passaro(Ator):
             :return: posição x, y
         """
 
-        if self.foi_lancado():
+        if self.foi_lancado() and self.status == ATIVO:
             intervalo_de_tempo = tempo - self._tempo_de_lancamento
             self._calcular_posicao_vertical(intervalo_de_tempo)
             self._calcular_posicao_horizontal(intervalo_de_tempo)
@@ -142,11 +140,14 @@ class Passaro(Ator):
             Método que cálcula e retorna a coordenada vertical do passaro em vôo.
         """
 
-        ang_radianos = math.radians(self._angulo_de_lancamento)
-        coord_vert = self._y_inicial
-        coord_vert += self.velocidade_escalar * math.sin(ang_radianos) * temp
-        coord_vert -= (GRAVIDADE * (temp ** 2)) / 2
-        self.y = coord_vert
+        #ang_radianos = math.radians(self._angulo_de_lancamento)
+        #coord_vert = self._y_inicial
+        #coord_vert += self.velocidade_escalar * math.sin(ang_radianos) * temp
+        #coord_vert -= (GRAVIDADE * (temp ** 2)) / 2
+        #self.y = coord_vert
+
+        aux_y = self._y_inicial + self.velocidade_escalar * math.sin(self._angulo_de_lancamento) * temp
+        self.y = aux_y - (GRAVIDADE * (temp ** 2)) / 2
 
 
     def _calcular_posicao_horizontal(self, temp):
@@ -154,10 +155,12 @@ class Passaro(Ator):
             Método que cálcula e retorna a coordenada horizontal do passaro em vôo.
         """
 
-        ang_radianos = math.radians(self._angulo_de_lancamento)
-        coord_horiz = self._x_inicial
-        coord_horiz += self.velocidade_escalar * math.cos(ang_radianos) * temp
-        self.x = coord_horiz
+        #coord_horiz = self._x_inicial
+        #coord_horiz += self.velocidade_escalar * math.cos(self._angulo_de_lancamento) * temp
+        #self.x = coord_horiz
+
+        self.x = self._x_inicial + self.velocidade_escalar * math.cos(self._angulo_de_lancamento) * temp
+
 
 
     def lancar(self, angulo, tmp_de_lanc):
@@ -169,7 +172,7 @@ class Passaro(Ator):
         :param tmp_de_lanc (tempo_de_lancamento):
         :return:
         """
-        self._angulo_de_lancamento = angulo
+        self._angulo_de_lancamento = math.radians(angulo)
         self._tempo_de_lancamento = tmp_de_lanc
 
 

@@ -20,6 +20,7 @@ from fase import Fase, Ponto, EM_ANDAMENTO, VITORIA, DERROTA
 
 
 class AtorFake:
+
     def __init__(self, x=0, y=0):
         self.y = y
         self.x = x
@@ -48,6 +49,7 @@ class PorcoFake(AtorFake):
 
 
 class PassaroFake(AtorFake):
+
     def __init__(self, x=0, y=0):
         super().__init__(x, y)
         self._lancado = False
@@ -66,6 +68,7 @@ class PassaroFake(AtorFake):
 
 
 class FaseTestes(TestCase):
+
     def teste_adicionar_obstaculo(self):
         fase = Fase()
         self.assertListEqual([], fase._obstaculos)
@@ -195,8 +198,6 @@ class FaseTestes(TestCase):
         self.assertTrue(passaro.colidir_com_chao_executado)
         self.assertEqual(1, passaro.intervalo_colisao)
         self.assertEqual(1, porco.intervalo_colisao)
-
-
 
     def teste_intervalo_de_colisao_nao_padrao(self):
         '''

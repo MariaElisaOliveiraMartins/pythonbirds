@@ -60,6 +60,8 @@ class Ator():
             if (coord_x in area_de_colisao) and (coord_y in area_de_colisao):
                 outro_ator.status = DESTRUIDO
                 self.status = DESTRUIDO
+        else:
+            pass
 
 
 class Obstaculo(Ator):
@@ -111,7 +113,9 @@ class Passaro(Ator):
         o status dos Passaro deve ser alterado para destruido, bem como o seu caracter
 
         """
+
         if self.y <= 0: self.status = DESTRUIDO
+
 
     def calcular_posicao(self, tempo):
         """

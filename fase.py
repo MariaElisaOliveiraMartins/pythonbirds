@@ -116,12 +116,14 @@ class Fase():
         :param tempo: tempo para o qual devem ser calculados os pontos
         :return: objeto do tipo Ponto
         """
+
         lista_de_bichos = self._passaros + self._porcos
         for cada_passaro in self._passaros:
             cada_passaro.calcular_posicao(tempo)
             for cada_bicho in lista_de_bichos:
                 cada_bicho.colidir(cada_bicho, self.intervalo_de_colisao)
             cada_passaro.colidir_com_chao()
+        pass
 
         pontos=[self._transformar_em_ponto(a) for a in self._passaros+self._obstaculos+self._porcos]
 
